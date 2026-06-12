@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InAmigos Foundation | Empowering Communities</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<script>
+    // Gallery Tab Switching - Pure JavaScript (Lightweight)
+    const navBtns = document.querySelectorAll('.gallery-nav-btn');
+    const categories = document.querySelectorAll('.gallery-category');
+    
+    function showCategory(categoryId) {
+        // Hide all categories
+        categories.forEach(cat => {
+            cat.classList.remove('active-category');
+        });
+        
+        // Show selected category
+        const selectedCategory = document.getElementById(categoryId);
+        if (selectedCategory) {
+            selectedCategory.classList.add('active-category');
+        }
+        
+        // Update active button style
+        navBtns.forEach(btn => {
+            btn.classList.remove('active');
+            const btnHref = btn.getAttribute('href').substring(1);
+            if (btnHref === categoryId) {
+                btn.classList.add('active');
+            }
+        });
+    }
+    
+    // Add click event to each button
+    navBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const categoryId = this.getAttribute('href').substring(1);
+            showCategory(categoryId);
+        });
+    });
+    
+    // Show "All Photos" by default
+    showCategory('gallery-all');
+</script>
+
+<body>
+
+<!-- Header / Navigation -->
+<header>
+    <div class="container">
+        <div class="logo-area">
+            <!-- Logo image added here -->
+            <img src="images/logo.png" alt="InAmigos Foundation Logo" class="logo-img">
+            <div class="logo-text">
+                <h1>InAmigos Foundation</h1>
+                <p>Uniting minds for change | Section 8 Registered NGO</p>
+            </div>
+        </div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#impact">Impact</a>
+            <a href="#join">Join Us</a>
+        </nav>
+    </div>
+</header>
+<!-- Hero Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h2>Empower. Educate. Elevate.</h2>
+            <p>Since 2020, InAmigos Foundation has been transforming lives across India through education, women empowerment, animal welfare, and environmental conservation.</p>
+            <a href="#join" class="btn btn-primary">Become a Volunteer →</a>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about">
+    <div class="container">
+        <h2 class="section-title">Who We Are</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p><strong>InAmigos Foundation</strong> was founded on September 23, 2020, by <strong>Mr. Govind Shukla</strong> (Founder & CEO). It is a Section 8 registered non-profit organization licensed by the Central Government, with its base in <strong>Bilaspur, Chhattisgarh</strong>.</p>
+                <p>The foundation holds <strong>80G & 12A certifications</strong>, ensuring tax-exempt benefits for donors, and is <strong>CSR-1 registered</strong>, allowing collaboration with corporate partners for impactful CSR initiatives. Additionally, we are <strong>NITI Aayog registered</strong> and hold the prestigious <strong>IAF ISO 9001:2015 certification</strong>.</p>
+                <p>With a strong network of dedicated professionals, volunteers, and corporate partners, we work tirelessly across India to bring positive change in society.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-circle">
+                    <span class="stat-number">2020</span>
+                    <p>Year Founded</p>
+                </div>
+                <div class="stat-circle">
+                    <span class="stat-number">86k+</span>
+                    <p>Followers</p>
+                </div>
+                <div class="stat-circle">
+                    <span class="stat-number">201-500</span>
+                    <p>Team Members</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section - All 6 Real Projects -->
+<section id="projects">
+    <div class="container">
+        <h2 class="section-title">Our Flagship Projects</h2>
+        <p class="section-subtitle">6 impactful initiatives transforming communities across India</p>
+        
+        <div class="projects-grid">
+            <!-- Project Seva -->
+            <div class="project-card">
+                <div class="project-icon">🍲</div>
+                <h3>Project Seva</h3>
+                <p>Providing food and clothing to the underprivileged. Over <strong>50,000+ meals</strong> and clothing items distributed to those in need.</p>
+                <span class="impact-badge">📊 50,000+ Meals Served</span>
+            </div>
+
+            <!-- Project Bachpanshala -->
+            <div class="project-card">
+                <div class="project-icon">📚</div>
+                <h3>Project Bachpanshala</h3>
+                <p>Ensuring quality education for underprivileged children through digital literacy, life skills, and school education support.</p>
+                <span class="impact-badge">📊 Bridging Educational Gaps</span>
+            </div>
+
+            <!-- Project Jeev -->
+            <div class="project-card">
+                <div class="project-icon">🐾</div>
+                <h3>Project Jeev</h3>
+                <p>Animal welfare including rescue, protection, and feeding. <strong>50+ stray animals</strong> fed daily through our volunteer network.</p>
+                <span class="impact-badge">📊 50+ Animals Fed Daily</span>
+            </div>
+
+            <!-- Project Udaan -->
+            <div class="project-card">
+                <div class="project-icon">🦋</div>
+                <h3>Project Udaan</h3>
+                <p>Women empowerment through skill development, financial independence, and menstrual hygiene awareness. <strong>900+ women empowered.</strong></p>
+                <span class="impact-badge">📊 900+ Women Empowered</span>
+            </div>
+
+            <!-- Project Prakriti -->
+            <div class="project-card">
+                <div class="project-icon">🌿</div>
+                <h3>Project Prakriti</h3>
+                <p>Environmental conservation and sustainability. <strong>20,000+ saplings planted</strong> and support for eco-friendly agriculture.</p>
+                <span class="impact-badge">📊 20,000+ Saplings Planted</span>
+            </div>
+
+            <!-- Project Vikas -->
+            <div class="project-card">
+                <div class="project-icon">💼</div>
+                <h3>Project Vikas</h3>
+                <p>Enhancing employability through skill development programs. <strong>30,000+ interns trained</strong> in data operations, finance, research, content writing, digital marketing, and social work.</p>
+                <span class="impact-badge">📊 30,000+ Interns Trained</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Impact Section -->
+<section id="impact">
+    <div class="container">
+        <h2 class="section-title">Our Impact at a Glance</h2>
+        <div class="impact-stats">
+            <div class="stat-item">
+                <span class="stat-number">50,000+</span>
+                <p>Meals Distributed</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">20,000+</span>
+                <p>Saplings Planted</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">900+</span>
+                <p>Women Empowered</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">30,000+</span>
+                <p>Interns Trained</p>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number">50+</span>
+                <p>Animals Fed Daily</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Gallery Section - Real Images of InAmigos Foundation -->
+<section id="gallery">
+    <div class="container">
+        <h2 class="section-title">📸 Our Work in Photos</h2>
+        <p class="section-subtitle">Real moments from our projects across India</p>
+        
+        <!-- Category Navigation -->
+        <div class="gallery-nav">
+            <a href="#gallery-all" class="gallery-nav-btn active">All Photos</a>
+            <a href="#gallery-edu" class="gallery-nav-btn">📚 Bachpanshala</a>
+            <a href="#gallery-env" class="gallery-nav-btn">🌿 Prakriti</a>
+            <a href="#gallery-women" class="gallery-nav-btn">🦋 Udaan</a>
+            <a href="#gallery-seva" class="gallery-nav-btn">🍲 Seva</a>
+            <a href="#gallery-animal" class="gallery-nav-btn">🐾 Jeev</a>
+        </div>
+
+        <!-- ALL PROJECTS CATEGORY -->
+        <div id="gallery-all" class="gallery-category active-category">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-edu-1.jpg" alt="Children learning at Bachpanshala" onerror="this.src='https://placehold.co/400x300/1a4d2a/white?text=Bachpanshala'">
+                    <div class="gallery-overlay">
+                        <span>📚 Bachpanshala</span>
+                        <p>Children receiving quality education</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-env-1.jpg" alt="Tree plantation drive" onerror="this.src='https://placehold.co/400x300/2a5935/white?text=Prakriti'">
+                    <div class="gallery-overlay">
+                        <span>🌿 Prakriti</span>
+                        <p>20,000+ saplings planted</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-women-1.jpg" alt="Women empowerment workshop" onerror="this.src='https://placehold.co/400x300/946b42/white?text=Udaan'">
+                    <div class="gallery-overlay">
+                        <span>🦋 Udaan</span>
+                        <p>900+ women empowered</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-food-1.jpg" alt="Food distribution" onerror="this.src='https://placehold.co/400x300/e76f51/white?text=Seva'">
+                    <div class="gallery-overlay">
+                        <span>🍲 Seva</span>
+                        <p>50,000+ meals served</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-animal-1.jpg" alt="Feeding stray animals" onerror="this.src='https://placehold.co/400x300/f4a261/white?text=Jeev'">
+                    <div class="gallery-overlay">
+                        <span>🐾 Jeev</span>
+                        <p>50+ animals fed daily</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-edu-2.jpg" alt="Digital literacy class" onerror="this.src='https://placehold.co/400x300/1a4d2a/white?text=Bachpanshala'">
+                    <div class="gallery-overlay">
+                        <span>💻 Digital Education</span>
+                        <p>Bridging the digital divide</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-women-2.jpg" alt="Skill training session" onerror="this.src='https://placehold.co/400x300/946b42/white?text=Udaan'">
+                    <div class="gallery-overlay">
+                        <span>✂️ Skill Development</span>
+                        <p>Women becoming self-reliant</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-env-2.jpg" alt="Volunteers planting trees" onerror="this.src='https://placehold.co/400x300/2a5935/white?text=Prakriti'">
+                    <div class="gallery-overlay">
+                        <span>🤝 Green Initiative</span>
+                        <p>Community participation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-animal-2.jpg" alt="Animal rescue" onerror="this.src='https://placehold.co/400x300/f4a261/white?text=Jeev'">
+                    <div class="gallery-overlay">
+                        <span>❤️ Animal Rescue</span>
+                        <p>Every life matters</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-food-2.jpg" alt="Clothing donation" onerror="this.src='https://placehold.co/400x300/e76f51/white?text=Seva'">
+                    <div class="gallery-overlay">
+                        <span>👕 Winter Drive</span>
+                        <p>Warmth for the needy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-edu-3.jpg" alt="School kit distribution" onerror="this.src='https://placehold.co/400x300/1a4d2a/white?text=Bachpanshala'">
+                    <div class="gallery-overlay">
+                        <span>📚 School Kits</span>
+                        <p>Books and stationery for children</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-women-3.jpg" alt="Women group photo" onerror="this.src='https://placehold.co/400x300/946b42/white?text=Udaan'">
+                    <div class="gallery-overlay">
+                        <span>👭 United for Change</span>
+                        <p>Women leading the way</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BACHPANSHALA CATEGORY -->
+        <div id="gallery-edu" class="gallery-category">
+            <h3 class="category-title">📚 Project Bachpanshala - Education for All</h3>
+            <p class="category-desc">Bachpanshala focuses on providing quality education, digital literacy, and life skills to underprivileged children, ensuring every child gets the opportunity to dream and succeed. [citation:8]</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-edu-1.jpg" alt="Children learning" onerror="this.src='https://placehold.co/400x300/1a4d2a/white?text=Children+Learning'">
+                    <div class="gallery-overlay">
+                        <span>📖 Happy Children Learning</span>
+                        <p>Interactive classroom sessions</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-edu-2.jpg" alt="Digital literacy" onerror="this.src='https://placehold.co/400x300/1a4d2a/white?text=Digital+Literacy'">
+                    <div class="gallery-overlay">
+                        <span>💻 Digital Literacy Program</span>
+                        <p>Bridging the technology gap</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-edu-3.jpg" alt="School kits" onerror="this.src='https://placehold.co/400x300/1a4d2a/white?text=School+Kits'">
+                    <div class="gallery-overlay">
+                        <span>📚 School Kit Distribution</span>
+                        <p>Books, notebooks, and stationery</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRAKRITI CATEGORY -->
+        <div id="gallery-env" class="gallery-category">
+            <h3 class="category-title">🌿 Project Prakriti - Environmental Conservation</h3>
+            <p class="category-desc">Prakriti promotes environmental sustainability through tree plantation drives, water conservation awareness, and eco-friendly initiatives across communities. [citation:6]</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-env-1.jpg" alt="Tree plantation" onerror="this.src='https://placehold.co/400x300/2a5935/white?text=Tree+Plantation'">
+                    <div class="gallery-overlay">
+                        <span>🌳 Tree Plantation Drive</span>
+                        <p>20,000+ saplings planted</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-env-2.jpg" alt="Volunteers planting" onerror="this.src='https://placehold.co/400x300/2a5935/white?text=Volunteers'">
+                    <div class="gallery-overlay">
+                        <span>🤝 Volunteers in Action</span>
+                        <p>Community participation</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-env-3.jpg" alt="Green initiative" onerror="this.src='https://placehold.co/400x300/2a5935/white?text=Green+Initiative'">
+                    <div class="gallery-overlay">
+                        <span>🌱 Green Future</span>
+                        <p>Sustainable environment</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- UDAAN CATEGORY -->
+        <div id="gallery-women" class="gallery-category">
+            <h3 class="category-title">🦋 Project Udaan - Women Empowerment</h3>
+            <p class="category-desc">Udaan empowers women through skill development, financial independence training, and creating opportunities for a better future. [citation:10]</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-women-1.jpg" alt="Tailoring training" onerror="this.src='https://placehold.co/400x300/946b42/white?text=Tailoring+Training'">
+                    <div class="gallery-overlay">
+                        <span>✂️ Tailoring Workshop</span>
+                        <p>Skill development for independence</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-women-2.jpg" alt="Digital training" onerror="this.src='https://placehold.co/400x300/946b42/white?text=Digital+Literacy'">
+                    <div class="gallery-overlay">
+                        <span>💻 Digital Literacy</span>
+                        <p>Empowering women with technology</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-women-3.jpg" alt="Women group" onerror="this.src='https://placehold.co/400x300/946b42/white?text=Women+Group'">
+                    <div class="gallery-overlay">
+                        <span>👭 United for Change</span>
+                        <p>900+ women empowered</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEVA CATEGORY -->
+        <div id="gallery-seva" class="gallery-category">
+            <h3 class="category-title">🍲 Project Seva - Food & Clothing Distribution</h3>
+            <p class="category-desc">Seva provides essential food and clothing to the underprivileged, ensuring basic necessities reach those who need them most. [citation:10]</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-food-1.jpg" alt="Food distribution" onerror="this.src='https://placehold.co/400x300/e76f51/white?text=Food+Distribution'">
+                    <div class="gallery-overlay">
+                        <span>🍛 Meal Distribution</span>
+                        <p>50,000+ meals served</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-food-2.jpg" alt="Clothing donation" onerror="this.src='https://placehold.co/400x300/e76f51/white?text=Clothing+Donation'">
+                    <div class="gallery-overlay">
+                        <span>👕 Winter Clothing Drive</span>
+                        <p>Warm clothes for the needy</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-food-3.jpg" alt="Volunteers serving" onerror="this.src='https://placehold.co/400x300/e76f51/white?text=Volunteers+Serving'">
+                    <div class="gallery-overlay">
+                        <span>🤝 Serving with Dignity</span>
+                        <p>Volunteers making a difference</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- JEEV CATEGORY -->
+        <div id="gallery-animal" class="gallery-category">
+            <h3 class="category-title">🐾 Project Jeev - Animal Welfare</h3>
+            <p class="category-desc">Jeev is dedicated to animal welfare including rescue, protection, and daily feeding of stray animals. Every life matters. [citation:3]</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/gallery-animal-1.jpg" alt="Feeding animals" onerror="this.src='https://placehold.co/400x300/f4a261/white?text=Feeding+Animals'">
+                    <div class="gallery-overlay">
+                        <span>🐕 Feeding Stray Animals</span>
+                        <p>50+ animals fed daily</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-animal-2.jpg" alt="Animal rescue" onerror="this.src='https://placehold.co/400x300/f4a261/white?text=Animal+Rescue'">
+                    <div class="gallery-overlay">
+                        <span>🆘 Animal Rescue</span>
+                        <p>Medical aid for injured animals</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/gallery-animal-3.jpg" alt="Happy animals" onerror="this.src='https://placehold.co/400x300/f4a261/white?text=Happy+Animals'">
+                    <div class="gallery-overlay">
+                        <span>❤️ Compassion in Action</span>
+                        <p>Every life matters</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="gallery-footer">
+            <p>📸 Real photos from InAmigos Foundation projects</p>
+            <div class="hashtags">
+                <span>#InAmigos</span>
+                <span>#InAmigosFoundation</span>
+                <span>#IAF</span>
+                <span>#ServeWithDignity</span>
+                <span>#HumanityFirst</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Certifications Section -->
+<section id="certifications">
+    <div class="container">
+        <h2 class="section-title">Recognitions & Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-item">✓ Section 8 Registered</div>
+            <div class="cert-item">✓ 80G & 12A Certified</div>
+            <div class="cert-item">✓ CSR-1 Registered</div>
+            <div class="cert-item">✓ ISO 9001:2015 Certified</div>
+            <div class="cert-item">✓ NITI Aayog Registered</div>
+            <div class="cert-item">✓ NGO Darpan Recognized</div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action Section -->
+<section id="join">
+    <div class="container">
+        <div class="cta-banner">
+            <h3>🤝 Join the InAmigos Movement</h3>
+            <p>Whether you have 2 hours or 20 hours a week, your skills can ignite transformation. Volunteers, donors, and corporate partners are welcome.</p>
+            <div class="btn-group">
+                <a href="#" class="btn btn-primary">📢 Volunteer Now</a>
+                <a href="#" class="btn btn-secondary">💰 Support a Project</a>
+                <a href="#" class="btn btn-outline">📧 Join Newsletter</a>
+            </div>
+            <div class="hashtags">
+                <span>#InAmigos</span>
+                <span>#InAmigosFoundation</span>
+                <span>#IAF</span>
+                <span>#ServeWithDignity</span>
+                <span>#HumanityFirst</span>
+                <span>#TogetherWeRise</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>InAmigos Foundation</h3>
+                <p>Section 8 Registered Non-Profit Organization</p>
+                <p>📍 Bilaspur, Chhattisgarh, India</p>
+                <p>📧 support@inamigosfoundation.org.in</p>
+                <p>📞 +91 626 730 9902</p>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#join">Join Us</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 InAmigos Foundation — Awareness for action | Together we thrive</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
